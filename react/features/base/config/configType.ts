@@ -506,6 +506,10 @@ export interface IConfig {
     webrtcIceUdpDisable?: boolean;
     websocket?: string;
     websocketKeepAliveUrl?: string;
+    welcomePage?: {
+        customUrl?: string | boolean;
+        disabled?: boolean;
+    };
     whiteboard?: {
         collabServerBaseUrl?: string;
         enabled?: boolean;

@@ -17,5 +17,17 @@ export function isWelcomePageEnabled(stateful: IStateful) {
         return getFeatureFlag(stateful, WELCOME_PAGE_ENABLED, false);
     }
 
-    return toState(stateful)['features/base/config'].enableWelcomePage;
+    const config = toState(stateful)['features/base/config'];
+
+    return !config.welcomePage?.disabled || config.enableWelcomePage;
+}
+
+/**
+ * Returns the configured custom URL (if any) to redirect to instead of the normal landing page.
+ *
+ * @param {IStateful} stateful - The redux state or {@link getState}.
+ * @returns {string|boolean} - The custom URL.
+ */
+export function getCustomLandingPageURL(stateful: IStateful) {
+    return toState(stateful)['features/base/config'].welcomePage?.customUrl;
 }

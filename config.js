@@ -580,9 +580,15 @@ var config = {
     // Require users to always specify a display name.
     // requireDisplayName: true,
 
-    // Whether to use a welcome page or not. In case it's false a random room
-    // will be joined when no room is specified.
-    enableWelcomePage: true,
+    welcomePage: {
+        // Whether to disable welcome page. In case it's disabled a random room
+        // will be joined when no room is specified.
+        disabled: false,
+
+        // If set,landing page will redirect to this URL.
+        customUrl: false
+    },
+
 
     // Disable app shortcuts that are registered upon joining a conference
     // disableShortcuts: false,
